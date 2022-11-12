@@ -1,0 +1,24 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(leaflet)
+```
+
+```{r}
+ywIcon <- makeIcon(
+  iconUrl = "https://www.ycampus.co.kr/images/common/head_logo.png",
+  iconWidth = 80, iconHeight = 20,
+  iconAnchorX = 40, iconAnchorY = 10
+)
+
+mymap <- leaflet() %>% 
+  addTiles() %>% 
+  setView(lat = 37.5138549, lng = 127.0295296, zoom = 17) %>% 
+  addMarkers(lat = 37.5138549, lng = 127.0295296, popup = "영우글러벌",
+             icon = ywIcon)
+mymap
+```
+
